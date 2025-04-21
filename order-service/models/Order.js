@@ -1,0 +1,29 @@
+const mongoose = require("mongoose");
+
+const orderSchema = new mongoose.Schema({
+    userId: String,
+    userLocation: String,
+    customerName: String,
+    phone: String,
+    address: String,
+    resturantId: String,
+    resturantLocation: String,
+    mealId: String,
+    itemName: String,
+    date: {
+        type: Date,
+        default: Date.now,
+      },
+    quantity: Number,
+    price: Number,
+    driverId: String,
+    driverLocation: String,
+    driverName: String,
+    status: {
+        type: String,
+        enum: ['Pending', 'Accepted', 'Out for Delivery', 'Delivered'],
+        default: 'Pending'
+      }
+});
+
+module.exports = mongoose.model("Order", orderSchema);
