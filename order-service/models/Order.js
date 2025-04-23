@@ -3,11 +3,19 @@ const mongoose = require("mongoose");
 const orderSchema = new mongoose.Schema({
     userId: String,
     userLocation: String,
+    userDistance: {
+      latitude: Number,
+      longitude: Number
+  },
     customerName: String,
     phone: String,
     address: String,
     resturantId: String,
     resturantLocation: String,
+    resturantDistance: {
+      latitude: Number,
+      longitude: Number
+  },
     mealId: String,
     itemName: String,
     date: {

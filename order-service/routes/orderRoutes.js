@@ -1,6 +1,8 @@
 const express = require("express");
-const { createOrder, getOrders, updateOrder , assignDriver , updateOrderStatus , updateRestaurantDetails , updateUserDetails , updateMealDetails , getAcceptedOrders} = require("../controllers/orderController");
+const { createOrder, getOrders, updateOrder , assignDriver , updateOrderStatus , updateRestaurantDetails , updateUserDetails , updateMealDetails } = require("../controllers/orderController");
 const router = express.Router();
+const orderController = require('../controllers/orderController');
+
 
 router.post("/", createOrder);
 router.get("/", getOrders);
@@ -22,6 +24,6 @@ router.patch("/:id/update-user", updateUserDetails);
 router.patch("/:id/update-meal", updateMealDetails);
 
 // Get accepted orders
-router.get('/orders/accepted', getAcceptedOrders);
+router.get('/Accepted', orderController.getAcceptedOrders);
 
 module.exports = router;
