@@ -1,11 +1,14 @@
 const express = require("express");
-const { createOrder, getOrders, updateOrder , assignDriver , updateOrderStatus , updateRestaurantDetails , updateUserDetails , updateMealDetails } = require("../controllers/orderController");
+const { createOrder, getOrders, updateOrder , assignDriver , updateOrderStatus , updateRestaurantDetails , updateUserDetails , updateMealDetails , getOrderById } = require("../controllers/orderController");
 const router = express.Router();
 const orderController = require('../controllers/orderController');
 
 
 router.post("/", createOrder);
 router.get("/", getOrders);
+// get order by id
+router.get('/:id', getOrderById);   // Get by ID
+
 router.put("/:id", updateOrder);
 
 // Assign Driver to an Order
