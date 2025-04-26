@@ -5,12 +5,12 @@ const connectDB = require("./config/db");
 
 const app = express();
 
-const corsOptions = {
-  origin: "http://localhost:5173", // your React app
-  credentials: true,
-};
+app.use(cors({
+    origin: true, // Allow all origins
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  }));
 
-app.use(cors(corsOptions));
+
 app.use(express.json());
 
 connectDB();
