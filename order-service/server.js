@@ -5,11 +5,11 @@ const connectDB = require("./config/db");
 
 const app = express();
 
+// Correct CORS setup
 app.use(cors({
-    origin: true, // Allow all origins
-    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-  }));
-
+    origin: '*', // <-- Allow any origin (localhost + frontend)
+    credentials: true, // <-- Only needed if you are sending cookies / authorization headers (JWT with cookies)
+}));
 
 app.use(express.json());
 
