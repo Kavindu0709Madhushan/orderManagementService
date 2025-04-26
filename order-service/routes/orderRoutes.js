@@ -27,6 +27,7 @@ router.patch("/:id/update-user", updateUserDetails);
 router.patch("/:id/update-meal", updateMealDetails);
 
 // Get accepted orders
-router.get('/Accepted', orderController.getAcceptedOrders);
+router.get('/status/:status', orderController.getOrdersByStatus);
+
 
 module.exports = router;

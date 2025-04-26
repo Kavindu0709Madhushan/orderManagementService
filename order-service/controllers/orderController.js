@@ -176,10 +176,12 @@ exports.updateMealDetails = async (req, res) => {
 
 // get to the accepted orders 
 
-exports.getAcceptedOrders = async (req, res) => {
+// Get orders by status
+exports.getOrdersByStatus = async (req, res) => {
     try {
-        const acceptedOrders = await Order.find({ status: 'Accepted' });
-        res.status(200).json(acceptedOrders);
+        const status = req.params.status;
+        const orders = await Order.find({ status });
+        res.status(200).json(orders);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
