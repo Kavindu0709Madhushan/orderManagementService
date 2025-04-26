@@ -8,7 +8,7 @@ const app = express();
 // Correct CORS setup
 app.use(cors({
     origin: '*', // <-- Allow any origin (localhost + frontend)
-    credentials: true, // <-- Only needed if you are sending cookies / authorization headers (JWT with cookies)
+    credentials: false, // <-- Only needed if you are sending cookies / authorization headers (JWT with cookies)
 }));
 
 app.use(express.json());
