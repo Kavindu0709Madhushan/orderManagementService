@@ -25,6 +25,7 @@ const orderSchema = new mongoose.Schema({
       },
     quantity: Number,
     price: Number,
+    totalPrice: Number,
     driverId: String,
     driverLocation: String,
     driverName: String,

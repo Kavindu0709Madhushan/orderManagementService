@@ -151,9 +151,9 @@ exports.updateUserDetails = async (req, res) => {
 
 exports.updateMealDetails = async (req, res) => {
     const { id } = req.params;
-    const { mealId, itemName, quantity, price } = req.body;
+    const { mealId, itemName, quantity, price, totalPrice } = req.body;
 
-    if (!mealId || !itemName || !quantity || !price) {
+    if (!mealId || !itemName || !quantity || !price || !totalPrice) {
         return res.status(400).json({ error: "All meal details are required" });
     }
 
