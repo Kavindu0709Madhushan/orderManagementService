@@ -160,7 +160,7 @@ exports.updateMealDetails = async (req, res) => {
     try {
         const order = await Order.findByIdAndUpdate(
             id,
-            { mealId, itemName, quantity, price },
+            { mealId, itemName, quantity, price,totalPrice },
             { new: true }
         );
 

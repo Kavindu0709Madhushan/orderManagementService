@@ -31,7 +31,7 @@ const orderSchema = new mongoose.Schema({
     driverName: String,
     status: {
         type: String,
-        enum: ['Pending', 'Accepted', 'Out for Delivery', 'Delivered','Droped','Piked','Assigned','Prepared'],
+        enum: ['Pending', 'Accepted', 'Out for Delivery', 'Delivered','Droped','PickUp','Assigned','Prepared'],
         default: 'Pending'
       }
 });
