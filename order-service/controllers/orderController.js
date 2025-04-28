@@ -125,16 +125,16 @@ exports.updateRestaurantDetails = async (req, res) => {
 
 exports.updateUserDetails = async (req, res) => {
     const { id } = req.params;
-    const { userId, userLocation, customerName, phone, address } = req.body;
+    const { userId, userLocation, customerName, phone, address , email} = req.body;
 
-    if (!userId || !userLocation || !customerName || !phone || !address) {
+    if (!userId || !userLocation || !customerName || !phone || !address || !email) {
         return res.status(400).json({ error: "All user details are required" });
     }
 
     try {
         const order = await Order.findByIdAndUpdate(
             id,
-            { userId, userLocation, customerName, phone, address },
+            { userId, userLocation, customerName, phone, address,email },
             { new: true }
         );
 
