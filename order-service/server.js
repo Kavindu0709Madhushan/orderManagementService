@@ -16,6 +16,7 @@ app.use(express.json());
 connectDB();
 
 app.use("/api/orders", require("./routes/orderRoutes"));
+app.use("/api/cart", require("./routes/cartRoutes"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Order Service running on port ${PORT}`));

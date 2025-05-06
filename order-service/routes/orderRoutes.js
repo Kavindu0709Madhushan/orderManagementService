@@ -1,5 +1,5 @@
 const express = require("express");
-const { createOrder, getOrders, updateOrder , assignDriver , updateOrderStatus , updateRestaurantDetails , updateUserDetails , updateMealDetails , getOrderById } = require("../controllers/orderController");
+const { createOrder, getOrders, updateOrder , assignDriver , updateOrderStatus , updateRestaurantDetails , updateUserDetails , updateMealDetails , getOrderById ,deleteOrderById} = require("../controllers/orderController");
 const router = express.Router();
 const orderController = require('../controllers/orderController');
 
@@ -8,8 +8,10 @@ router.post("/", createOrder);
 router.get("/", getOrders);
 // get order by id
 router.get('/:id', getOrderById);   // Get by ID
-
+// update order by id
 router.put("/:id", updateOrder);
+// delete order by id
+router.put("/delete/:id", deleteOrderById);
 
 // Assign Driver to an Order
 router.patch("/:id/assign-driver", assignDriver);
