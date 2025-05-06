@@ -5,10 +5,11 @@ const connectDB = require("./config/db");
 
 const app = express();
 
-// Correct CORS setup
+// ✅ Correct CORS settings for local React frontend
 app.use(cors({
-    origin: '*', // <-- Allow any origin (localhost + frontend)
-    credentials: false, // <-- Only needed if you are sending cookies / authorization headers (JWT with cookies)
+    origin: "http://localhost:5173",
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: false  // true only if sending cookies/auth headers
 }));
 
 app.use(express.json());
