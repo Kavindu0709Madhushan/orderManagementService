@@ -11,7 +11,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true  // true only if sending cookies/auth headers
 }));
-app.options("*", cors());
+
 app.use(express.json());
 
 connectDB();
