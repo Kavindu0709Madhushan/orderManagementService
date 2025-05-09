@@ -7,7 +7,7 @@ const app = express();
 
 // ✅ Correct CORS settings for local React frontend
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173","https://frontend-bite-speed.vercel.app/"],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: false  // true only if sending cookies/auth headers
 }));
