@@ -13,7 +13,7 @@ const app = express();
 // }));
 app.use(cors({
     origin: "*", //  Allow all origins (not safe for production)
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS','PATCH'],
 }));
 
 app.use(express.json());
